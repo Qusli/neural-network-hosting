@@ -1,0 +1,35 @@
+body {
+    background-color: $background-color;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+span, p,
+input, button {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+h1, h2, h3,
+span, p,
+input, button, a {
+    color: $text-default-color;
+}
+
+@media (max-width: $phone) {
+    body {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
