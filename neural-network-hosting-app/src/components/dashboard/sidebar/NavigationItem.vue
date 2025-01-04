@@ -1,6 +1,5 @@
 <script setup lang='ts'>
-import { computed } from 'vue';
-import { RouterLink, useRouter } from 'vue-router';
+import { RouterLink } from 'vue-router';
 
 import type { INavigationItem } from '@/interfaces/dashboard/navigation-item.interface';
 
@@ -10,16 +9,12 @@ interface Props {
     item: INavigationItem
 }
 
-const props = defineProps<Props>()
-
-const router = useRouter()
-
-const isActiveRoute = computed(() => props.item.path === router.currentRoute.value.path)
+defineProps<Props>()
 </script>
 
 <template>
     <RouterLink :to="item.path" :class="$s.link" >
-        <SharedInlineIcon :name="item.icon" :fill="isActiveRoute ? '#3B82F6' : '#111827'" />
+        <SharedInlineIcon :name="item.icon" />
         <p>{{ item.label }}</p>
     </RouterLink>
 </template>
@@ -32,22 +27,28 @@ const isActiveRoute = computed(() => props.item.path === router.currentRoute.val
 
     padding: 5px 10px;
     border-radius: $border-radius;
-    border: 2px solid transparent;
-
-    transition: border-color 0.35s ease;
 }
 
-.link:global(.router-link-active) {
+.link,
+.link :global(path),
+p {
+    transition: all 0.35s ease;
+}
+
+.link:global(.router-link-active),
+.link:not(.link:global(.router-link-active)):hover {
     background-color: $secondary-color;
 
     p {
         color: $primary-color;
     }
 
-    cursor: default;
+    & :global(path) {
+        fill: $primary-color;
+    }
 }
 
-.link:not(.link:global(.router-link-active)):hover {
-    border-color: $secondary-color;
+.link:global(.router-link-active) {
+    cursor: default;
 }
 </style>

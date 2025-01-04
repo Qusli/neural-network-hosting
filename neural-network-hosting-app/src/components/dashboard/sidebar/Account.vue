@@ -37,8 +37,8 @@ onClickOutside(navigation, (e: any) => {
             <p :class="$s['user-info__email']">{{ appStore.userEmail }}</p>
         </div>
         <div :class="[$s.account__navigation, isOpen ? $s['account__navigation--open'] : '']" ref="navigation">
-            <RouterLink to="">Профиль</RouterLink>
-            <RouterLink to="">Настройки</RouterLink>
+            <RouterLink :to="ROUTES.ACCOUNT.PROFILE.PATH">Профиль</RouterLink>
+            <RouterLink :to="ROUTES.ACCOUNT.SETTINGS.PATH">Настройки</RouterLink>
             <p :class="$s.navigation__logout" @click="logout">Выйти</p>
         </div>
     </div>
@@ -101,13 +101,14 @@ onClickOutside(navigation, (e: any) => {
             border-bottom-left-radius: $border-radius;
             border-bottom-right-radius: $border-radius;
         }
-
-        a:hover {
+ 
+        a:hover,
+        a:global(.router-link-active) {
             color: $primary-color;
-            background-color: rgba($primary-color, 0.25);
+            background-color: $secondary-color;
         }
 
-        a:active {
+        a:not(a:global(.router-link-active)):active {
             background-color: rgba($primary-color, 0.4);
         }
     }

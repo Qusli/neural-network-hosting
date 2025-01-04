@@ -14,5 +14,15 @@ export const ROUTES = {
             PATH: "/dashboard",
             NAME: "dashboard/home"
         }
+    },
+    ACCOUNT: {
+        PROFILE: {
+            PATH: "/account/profile",
+            NAME: "account/profile"
+        },
+        SETTINGS: {
+            PATH: "/account/settings",
+            NAME: "account/settings"
+        }
     }
 } as const

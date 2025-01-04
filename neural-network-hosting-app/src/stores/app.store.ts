@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-import type { Device } from "@/enums/device.enum";
+import { Device } from "@/enums/device.enum";
 import type { IUser } from "@/interfaces/shared/user.interface";
 
 interface State {
@@ -44,5 +44,10 @@ export const useAppStore = defineStore({
             return Device.DESKTOP
         }
 
+    },
+    actions: {
+        init() {
+            
+        }
     }
 })
