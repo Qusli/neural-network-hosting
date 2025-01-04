@@ -8,13 +8,13 @@ export default [
         component: () => import("@/templates/AuthTemplate.vue"),
         children: [
             {
-                path: "/auth/login",
-                name: ROUTES.AUTH.LOGIN,
+                path: ROUTES.AUTH.LOGIN.PATH,
+                name: ROUTES.AUTH.LOGIN.NAME,
                 component: () => import("@/views/auth/LoginView.vue")
             },
             {
-                path: "/auth/registration",
-                name: ROUTES.AUTH.REGISTRATION,
+                path: ROUTES.AUTH.REGISTRATION.PATH,
+                name: ROUTES.AUTH.REGISTRATION.NAME,
                 component: () => import("@/views/auth/RegistrationView.vue")
             }
         ]

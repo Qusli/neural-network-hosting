@@ -6,7 +6,3 @@ import Sidebar from '@/modules/dashboard/Sidebar.vue';
     <Sidebar />
     <RouterView />
 </template>
-
-<style lang='scss' module='$s'>
-
-</style>

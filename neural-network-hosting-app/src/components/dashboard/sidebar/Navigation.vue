@@ -1,5 +1,6 @@
 <script setup lang='ts'>
 import type { INavigationItem } from '@/interfaces/dashboard/navigation-item.interface';
+
 import NavigationItem from './NavigationItem.vue';
 
 interface Props {

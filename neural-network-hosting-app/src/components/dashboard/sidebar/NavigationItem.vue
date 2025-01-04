@@ -1,8 +1,10 @@
 <script setup lang='ts'>
-import SharedIcon from '@/components/shared/SharedIcon.vue';
-import type { INavigationItem } from '@/interfaces/dashboard/navigation-item.interface';
 import { computed } from 'vue';
 import { RouterLink, useRouter } from 'vue-router';
+
+import type { INavigationItem } from '@/interfaces/dashboard/navigation-item.interface';
+
+import SharedInlineIcon from '@/components/shared/SharedInlineIcon.vue';
 
 interface Props {
     item: INavigationItem
@@ -12,12 +14,12 @@ const props = defineProps<Props>()
 
 const router = useRouter()
 
-const isActiveRoute = computed(() => props.item.path === router.currentRoute.value.name)
+const isActiveRoute = computed(() => props.item.path === router.currentRoute.value.path)
 </script>
 
 <template>
-    <RouterLink :to="{ name: item.path }" :class="$s.link" >
-        <SharedIcon :name="item.icon" :fill="isActiveRoute ? '#3B82F6' : '#111827'" />
+    <RouterLink :to="item.path" :class="$s.link" >
+        <SharedInlineIcon :name="item.icon" :fill="isActiveRoute ? '#3B82F6' : '#111827'" />
         <p>{{ item.label }}</p>
     </RouterLink>
 </template>

@@ -1,9 +1,18 @@
 export const ROUTES = {
     AUTH: {
-        LOGIN: "auth/login",
-        REGISTRATION: "auth/registration"
+        LOGIN: {
+            PATH: "/auth/login",
+            NAME: "auth/login"
+        },
+        REGISTRATION: {
+            PATH: "/auth/registration",
+            NAME: "auth/registration"
+        }
     },
     DASHBOARD: {
-        HOME: "dashboard/home"
+        HOME: {
+            PATH: "/dashboard",
+            NAME: "dashboard/home"
+        }
     }
 } as const

@@ -1,14 +1,16 @@
 <script setup lang='ts'>
-import Navigation from '@/components/dashboard/sidebar/Navigation.vue';
-import LogoMediumIcon from '@/components/icons/LogoMediumIcon.vue';
 import { ROUTES } from '@/constants/routes.constant';
 import type { INavigationItem } from '@/interfaces/dashboard/navigation-item.interface';
+
+import Account from '@/components/dashboard/sidebar/Account.vue';
+import Navigation from '@/components/dashboard/sidebar/Navigation.vue';
+import LogoMediumIcon from '@/components/icons/LogoMediumIcon.vue';
 
 const navigations: INavigationItem[] = [
     {
         icon: "hostings",
         label: "Хостинги",
-        path: ROUTES.DASHBOARD.HOME
+        path: ROUTES.DASHBOARD.HOME.PATH
     }
 ]
 </script>
@@ -17,6 +19,7 @@ const navigations: INavigationItem[] = [
     <aside :class="[$s.sidebar, $s['sidebar--open']]">
         <LogoMediumIcon :class="$s.sidebar__logotype" />
         <Navigation :items="navigations" :class="$s.sidebar__navigation" />
+        <Account :class="$s.sidebar__account" />
     </aside>
 </template>
 
@@ -66,6 +69,10 @@ const navigations: INavigationItem[] = [
 
     &::after {
         order: 3;
+    }
+
+    &__account {
+        order: 4;
     }
 }
 </style>

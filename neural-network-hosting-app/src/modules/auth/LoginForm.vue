@@ -1,10 +1,12 @@
 <script setup lang='ts'>
 import { reactive } from 'vue';
+
+import { ROUTES } from '@/constants/routes.constant';
+
 import AuthForm from '@/components/auth/AuthForm.vue';
 import SharedButton from '@/components/shared/SharedButton.vue';
 import SharedInput from '@/components/shared/SharedInput.vue';
 import LogoBigIcon from '@/components/icons/LogoBigIcon.vue';
-import { ROUTES } from '@/constants/routes.constant';
 
 interface AuthData {
     login: string
@@ -31,7 +33,7 @@ const data: AuthData = reactive({
             <div :class="$s.or">
                 <p>или</p>
             </div>
-            <SharedButton type="secondary" label="Регистрация" @click="$router.push({ name: ROUTES.AUTH.REGISTRATION })"/>
+            <SharedButton type="secondary" label="Регистрация" @click="$router.push(ROUTES.AUTH.REGISTRATION.PATH)"/>
         </template>
     </AuthForm>
 </template>

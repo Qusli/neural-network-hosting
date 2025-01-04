@@ -19,7 +19,7 @@ const _key = useId()
 const focus: Ref<boolean> = ref(false)
 
 const onFocusIn = () => {
-
+    console.log()
     focus.value = true
 }
 
@@ -57,7 +57,7 @@ const onFocusOut = () => {
         border-radius: calc($border-radius + $border-width);
 
         transition: border-color 0.35s ease;
-        z-index: -1;
+        pointer-events: none;
     }
 
     &--focus::before {
@@ -74,7 +74,7 @@ const onFocusOut = () => {
 
     position: relative;
 
-    padding: 15px 20px;
+    padding: 15px 24px;
 
     border: 1px solid $stroke-color;
     border-radius: $border-radius;

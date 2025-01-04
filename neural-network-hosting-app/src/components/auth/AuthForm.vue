@@ -1,7 +1,3 @@
-<script setup lang='ts'>
-
-</script>
-
 <template>
     <form :class="$s['auth-form']">
         <div v-if="$slots.header" :class="[$s['auth-form__header'], 'auth-form__header']">

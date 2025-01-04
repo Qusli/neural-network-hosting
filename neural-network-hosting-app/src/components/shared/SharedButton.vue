@@ -32,7 +32,7 @@ const classes = reactive([
 .button {
     $transition: all 0.35s ease;
 
-    padding: 15px 20px;
+    padding: 12px 24px;
     border: 1px solid transparent;
     border-radius: $border-radius;
 
