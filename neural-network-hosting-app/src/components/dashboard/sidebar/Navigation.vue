@@ -1,25 +1,25 @@
-<script setup lang='ts'>
-import type { INavigationItem } from '@/interfaces/dashboard/navigation-item.interface';
+<script setup lang="ts">
+import type { INavigationItem } from '@/interfaces/dashboard/navigation-item.interface'
 
-import NavigationItem from './NavigationItem.vue';
+import NavigationItem from './NavigationItem.vue'
 
 interface Props {
-    items: INavigationItem[]
+  items: INavigationItem[]
 }
 
 defineProps<Props>()
 </script>
 
 <template>
-    <nav :class="$s.navigation">
-        <NavigationItem v-for="(item, index) in items" :key="index" :item="item" />
-    </nav>
+  <nav :class="$s.navigation">
+    <NavigationItem v-for="(item, index) in items" :key="index" :item="item" />
+  </nav>
 </template>
 
-<style lang='scss' module='$s'>
+<style lang="scss" module="$s">
 .navigation {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 </style>

@@ -1,24 +1,24 @@
 .or {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .or p {
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: rgba(#111827, 0.6);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: rgba(#111827, 0.6);
 }
 
 .or::before,
 .or::after {
-    content: "";
+  content: '';
 
-    display: inline-block;
-    
-    width: 100%;
-    height: 2px;
+  display: inline-block;
 
-    background-color: $stroke-color;
+  width: 100%;
+  height: 2px;
+
+  background-color: $stroke-color;
 }

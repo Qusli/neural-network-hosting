@@ -1,8 +1,15 @@
-<script setup lang='ts'>
-import Sidebar from '@/modules/dashboard/Sidebar.vue';
+<script setup lang="ts">
+import MobileHeader from '@/modules/dashboard/mobile-header/MobileHeader.vue'
+import Sidebar from '@/modules/dashboard/sidebar/Sidebar.vue'
 </script>
 
 <template>
-    <Sidebar />
-    <RouterView />
+  <!-- SIDEBAR -->
+  <Sidebar />
+
+  <!-- MOBILE HEADER -->
+  <MobileHeader />
+
+  <!-- MAIN ACTIVITY -->
+  <RouterView />
 </template>

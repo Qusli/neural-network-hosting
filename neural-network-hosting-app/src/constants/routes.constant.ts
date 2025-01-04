@@ -1,28 +1,28 @@
 export const ROUTES = {
-    AUTH: {
-        LOGIN: {
-            PATH: "/auth/login",
-            NAME: "auth/login"
-        },
-        REGISTRATION: {
-            PATH: "/auth/registration",
-            NAME: "auth/registration"
-        }
+  AUTH: {
+    LOGIN: {
+      PATH: '/auth/login',
+      NAME: 'auth/login',
     },
-    DASHBOARD: {
-        HOME: {
-            PATH: "/dashboard",
-            NAME: "dashboard/home"
-        }
+    REGISTRATION: {
+      PATH: '/auth/registration',
+      NAME: 'auth/registration',
     },
-    ACCOUNT: {
-        PROFILE: {
-            PATH: "/account/profile",
-            NAME: "account/profile"
-        },
-        SETTINGS: {
-            PATH: "/account/settings",
-            NAME: "account/settings"
-        }
-    }
+  },
+  DASHBOARD: {
+    HOME: {
+      PATH: '/dashboard',
+      NAME: 'dashboard/home',
+    },
+  },
+  ACCOUNT: {
+    PROFILE: {
+      PATH: '/account/profile',
+      NAME: 'account/profile',
+    },
+    SETTINGS: {
+      PATH: '/account/settings',
+      NAME: 'account/settings',
+    },
+  },
 } as const

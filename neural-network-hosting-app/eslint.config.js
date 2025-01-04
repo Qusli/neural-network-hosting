@@ -14,21 +14,20 @@ export default [
     ignores: ['**/dist/**', '**/dist-ssr/**', '**/coverage/**'],
   },
 
-  {
-    name: 'app/ignore-rules',
-    rules: {
-      'vue/multi-word-component-names': 'off',
-    },
-  },
-
   ...pluginVue.configs['flat/essential'],
   ...vueTsEslintConfig(),
   
   {
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
-    
+  
+  },
 
+  {
+    name: 'app/ignore-rules',
+    rules: {
+      'vue/multi-word-component-names': 'off',
+    },
   },
 
 

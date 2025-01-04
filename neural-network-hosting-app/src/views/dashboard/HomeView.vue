@@ -1,11 +1,5 @@
-<script setup lang='ts'>
+<script setup lang="ts"></script>
 
-</script>
+<template></template>
 
-<template>
-    
-</template>
-
-<style lang='scss' module='$s'>
-
-</style>
+<style lang="scss" module="$s"></style>
