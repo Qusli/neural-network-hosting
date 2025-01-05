@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { INavigationItem } from '@/interfaces/dashboard/navigation-item.interface'
+import type { INavigationItem } from '@/interfaces/workplace/navigation-item.interface'
 
 import { Device } from '@/enums/device.enum'
 
@@ -7,15 +7,20 @@ import { ROUTES } from '@/constants/routes.constant'
 
 import { useAppStore } from '@/stores/app.store'
 
-import Account from '@/components/dashboard/sidebar/Account.vue'
-import Navigation from '@/components/dashboard/sidebar/Navigation.vue'
 import LogoMediumIcon from '@/components/icons/LogoMediumIcon.vue'
+import Navigation from '@/components/workplace/sidebar/navigation/Navigation.vue'
+import UserNavigation from '@/components/workplace/sidebar/user/User.vue'
 
 const navigations: INavigationItem[] = [
   {
     icon: 'hostings',
     label: 'Хостинги',
-    path: ROUTES.DASHBOARD.HOSTINGS.PATH,
+    path: ROUTES.WORKPLACE.HOSTINGS.PATH,
+  },
+  {
+    icon: 'settings',
+    label: 'Настройки',
+    path: ROUTES.WORKPLACE.SETTINGS.PATH,
   },
 ]
 
@@ -26,7 +31,7 @@ const appStore = useAppStore()
   <aside v-if="appStore.device === Device.DESKTOP" :class="[$s.sidebar, $s['sidebar--open']]">
     <LogoMediumIcon :class="$s.sidebar__logotype" />
     <Navigation :items="navigations" :class="$s.sidebar__navigation" />
-    <Account :class="$s.sidebar__account" />
+    <UserNavigation :class="$s.sidebar__user" />
   </aside>
 </template>
 
@@ -78,7 +83,7 @@ const appStore = useAppStore()
     order: 3;
   }
 
-  &__account {
+  &__user {
     order: 4;
   }
 }

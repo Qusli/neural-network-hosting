@@ -1,7 +1,7 @@
 import type { RouteRecordRaw } from 'vue-router'
 
-import accountRoutes from './account.routes'
 import authRoutes from './auth.routes'
-import dashboardRoutes from './dashboard.routes'
+import userRoutes from './user.routes'
+import workplaceRoutes from './workplace.routes'
 
-export default [...authRoutes, ...dashboardRoutes, ...accountRoutes] as RouteRecordRaw[]
+export default [...authRoutes, ...workplaceRoutes, ...userRoutes] as RouteRecordRaw[]

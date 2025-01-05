@@ -9,20 +9,24 @@ export const ROUTES = {
       NAME: 'auth/registration',
     },
   },
-  DASHBOARD: {
+  WORKPLACE: {
     HOSTINGS: {
-      PATH: '/dashboard/hostings',
-      NAME: 'dashboard/hostings',
-    },
-  },
-  ACCOUNT: {
-    PROFILE: {
-      PATH: '/account/profile',
-      NAME: 'account/profile',
+      PATH: '/workplace/hostings',
+      NAME: 'workplace/hostings',
     },
     SETTINGS: {
-      PATH: '/account/settings',
-      NAME: 'account/settings',
+      PATH: '/workplace/settings',
+      NAME: 'workplace/settings',
+    },
+  },
+  USER: {
+    PROFILE: {
+      PATH: '/user/profile',
+      NAME: 'user/profile',
+    },
+    SETTINGS: {
+      PATH: '/user/settings',
+      NAME: 'user/settings',
     },
   },
 } as const

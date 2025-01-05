@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MobileHeader from '@/modules/dashboard/mobile-header/MobileHeader.vue'
-import Sidebar from '@/modules/dashboard/sidebar/Sidebar.vue'
+import MobileHeader from '@/modules/workplace/mobile-header/MobileHeader.vue'
+import Sidebar from '@/modules/workplace/sidebar/Sidebar.vue'
 </script>
 
 <template>
@@ -14,7 +14,6 @@ import Sidebar from '@/modules/dashboard/sidebar/Sidebar.vue'
     <!-- MAIN ACTIVITY -->
     <RouterView />
   </main>
-
 </template>
 
 <style lang="scss" module="$s">

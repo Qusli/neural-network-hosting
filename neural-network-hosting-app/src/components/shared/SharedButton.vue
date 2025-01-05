@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { reactive, useCssModule } from 'vue'
-import SharedInlineIcon from './SharedInlineIcon.vue';
+
+import SharedInlineIcon from './SharedInlineIcon.vue'
 
 interface Props {
   buttonType?: 'button' | 'submit'
   type?: 'default' | 'primary' | 'secondary'
   label: string
-  plusIcon?: boolean 
+  plusIcon?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   buttonType: 'button',
   type: 'default',
-  plusIcon: false
+  plusIcon: false,
 })
 
 const $style = useCssModule('$s')
@@ -65,7 +66,7 @@ const classes = reactive([
   &:hover {
     background-color: $component-background-color;
     border-color: $primary-color;
-  
+
     span {
       color: $primary-color;
     }

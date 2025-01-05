@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 
-import type { INavigationItem } from '@/interfaces/dashboard/navigation-item.interface'
+import type { INavigationItem } from '@/interfaces/workplace/navigation-item.interface'
 
 import SharedInlineIcon from '@/components/shared/SharedInlineIcon.vue'
 

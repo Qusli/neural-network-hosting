@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { INavigationItem } from '@/interfaces/dashboard/navigation-item.interface'
+import type { INavigationItem } from '@/interfaces/workplace/navigation-item.interface'
 
 import NavigationItem from './NavigationItem.vue'
 
@@ -20,6 +20,6 @@ defineProps<Props>()
 .navigation {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 </style>
