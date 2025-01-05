@@ -6,14 +6,18 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  isActive: false
+  isActive: false,
 })
 </script>
 
 <template>
   <div :class="[$s['list-label'], isActive ? $s['list-label--active'] : '']">
     <p>Рабочие пространства</p>
-    <SharedInlineIcon name="arrow-forward" size="1rem" :class="$s['list-label__arrow-forward-icon']"/>
+    <SharedInlineIcon
+      name="arrow-forward"
+      size="1rem"
+      :class="$s['list-label__arrow-forward-icon']"
+    />
   </div>
 </template>
 
@@ -33,7 +37,7 @@ withDefaults(defineProps<Props>(), {
     fill: $stroke-color;
   }
 
-  &--active .list-label__arrow-forward-icon{
+  &--active .list-label__arrow-forward-icon {
     rotate: 180deg;
   }
 }

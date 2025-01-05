@@ -13,12 +13,7 @@ const appStore = useAppStore()
 </script>
 
 <template>
-  <li
-    :class="[
-      $s.item,
-        item.id === appStore.workplaceses.current?.id ? $s['item--active'] : '',
-    ]"
-  >
+  <li :class="[$s.item, item.id === appStore.workplaceses.current?.id ? $s['item--active'] : '']">
     {{ item.title }}
   </li>
 </template>
@@ -35,9 +30,13 @@ const appStore = useAppStore()
     border-top-right-radius: $border-radius;
   }
 
-  &:nth-child(n+4) {
+  &:nth-child(n + 4):last-child {
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
+  }
+
+  &:nth-child(n + 5):last-child {
+    border-bottom-right-radius: 0;
   }
 
   &--active {

@@ -40,12 +40,27 @@ export const useAppStore = defineStore({
   state: (): State => ({
     workplaceses: {
       items: [
+        mockWorkplace,
         {
           id: 1,
           title: 'VZOR',
           users: [mockUser],
         },
-        mockWorkplace,
+        {
+          id: 1,
+          title: 'VZOR',
+          users: [mockUser],
+        },
+        {
+          id: 1,
+          title: 'VZOR',
+          users: [mockUser],
+        },
+        {
+          id: 1,
+          title: 'VZOR',
+          users: [mockUser],
+        },
       ],
       current: mockWorkplace,
     },

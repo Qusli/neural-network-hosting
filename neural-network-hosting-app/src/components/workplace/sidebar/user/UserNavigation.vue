@@ -46,7 +46,10 @@ onClickOutside(navigation, (e: any) => {
   >
     <RouterLink :to="ROUTES.USER.PROFILE.PATH" :class="$s.navigation__item">Профиль</RouterLink>
     <RouterLink :to="ROUTES.USER.SETTINGS.PATH" :class="$s.navigation__item">Настройки</RouterLink>
-    <UserNavigationWorkplaceListLabel :is-active="workplacesesHasOpen" @click="workplacesesHasOpen = !workplacesesHasOpen" />
+    <UserNavigationWorkplaceListLabel
+      :is-active="workplacesesHasOpen"
+      @click="workplacesesHasOpen = !workplacesesHasOpen"
+    />
     <p :class="[$s.navigation__item, $s.navigation__logout]" @click="logout">Выйти</p>
 
     <!-- WORKPLACE LIST -->
