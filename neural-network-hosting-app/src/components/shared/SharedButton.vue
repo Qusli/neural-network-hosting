@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import { reactive, useCssModule } from 'vue'
+import SharedInlineIcon from './SharedInlineIcon.vue';
 
 interface Props {
   buttonType?: 'button' | 'submit'
   type?: 'default' | 'primary' | 'secondary'
   label: string
+  plusIcon?: boolean 
 }
 
 const props = withDefaults(defineProps<Props>(), {
   buttonType: 'button',
   type: 'default',
+  plusIcon: false
 })
 
 const $style = useCssModule('$s')
@@ -24,7 +27,8 @@ const classes = reactive([
 
 <template>
   <button :type="buttonType" :class="classes">
-    {{ label }}
+    <SharedInlineIcon v-if="plusIcon" name="plus" fill="white" />
+    <span>{{ label }}</span>
   </button>
 </template>
 
@@ -32,7 +36,13 @@ const classes = reactive([
 .button {
   $transition: all 0.35s ease;
 
-  padding: 12px 24px;
+  max-height: 40px;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 10px 15px;
   border: 1px solid transparent;
   border-radius: $border-radius;
 
@@ -41,28 +51,50 @@ const classes = reactive([
   -webkit-transition: $transition;
   -o-transition: $transition;
 
+  span {
+    transition: $transition;
+    -webkit-transition: $transition;
+    -o-transition: $transition;
+  }
+
   cursor: pointer;
 
   &:hover {
-    color: $primary-color;
     background-color: $component-background-color;
     border-color: $primary-color;
+  
+    span {
+      color: $primary-color;
+    }
+
+    :global(path) {
+      fill: $primary-color;
+    }
   }
 }
 
 .button--default {
-  color: $text-default-color;
   background-color: $component-background-color;
   border-color: $stroke-color;
+
+  span {
+    color: $text-default-color;
+  }
 }
 
 .button--primary {
-  color: white;
   background-color: $primary-color;
+
+  span {
+    color: white;
+  }
 }
 
 .button--secondary {
-  color: $primary-color;
   background-color: $secondary-color;
+
+  span {
+    color: $primary-color;
+  }
 }
 </style>

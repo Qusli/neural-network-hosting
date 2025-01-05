@@ -10,9 +10,9 @@ export const ROUTES = {
     },
   },
   DASHBOARD: {
-    HOME: {
-      PATH: '/dashboard',
-      NAME: 'dashboard/home',
+    HOSTINGS: {
+      PATH: '/dashboard/hostings',
+      NAME: 'dashboard/hostings',
     },
   },
   ACCOUNT: {

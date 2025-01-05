@@ -15,7 +15,7 @@ const navigations: INavigationItem[] = [
   {
     icon: 'hostings',
     label: 'Хостинги',
-    path: ROUTES.DASHBOARD.HOME.PATH,
+    path: ROUTES.DASHBOARD.HOSTINGS.PATH,
   },
 ]
 
@@ -45,7 +45,7 @@ const appStore = useAppStore()
   background-color: $component-background-color;
 
   &--open {
-    width: $sidebar-open-width;
+    min-width: $sidebar-open-width;
   }
 
   &::before,

@@ -4,12 +4,21 @@ import Sidebar from '@/modules/dashboard/sidebar/Sidebar.vue'
 </script>
 
 <template>
-  <!-- SIDEBAR -->
-  <Sidebar />
-
   <!-- MOBILE HEADER -->
   <MobileHeader />
 
-  <!-- MAIN ACTIVITY -->
-  <RouterView />
+  <main :class="$s.main">
+    <!-- SIDEBAR -->
+    <Sidebar />
+
+    <!-- MAIN ACTIVITY -->
+    <RouterView />
+  </main>
+
 </template>
+
+<style lang="scss" module="$s">
+.main {
+  display: flex;
+}
+</style>

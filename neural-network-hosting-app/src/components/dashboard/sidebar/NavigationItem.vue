@@ -30,7 +30,6 @@ defineProps<Props>()
 }
 
 .link,
-.link :global(path),
 p {
   transition: all 0.35s ease;
 }

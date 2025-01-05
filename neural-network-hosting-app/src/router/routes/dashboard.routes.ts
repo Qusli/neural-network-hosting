@@ -8,9 +8,9 @@ export default [
     component: () => import('@/templates/MainTemplate.vue'),
     children: [
       {
-        path: ROUTES.DASHBOARD.HOME.PATH,
-        name: ROUTES.DASHBOARD.HOME.NAME,
-        component: () => import('@/views/dashboard/HomeView.vue'),
+        path: ROUTES.DASHBOARD.HOSTINGS.PATH,
+        name: ROUTES.DASHBOARD.HOSTINGS.NAME,
+        component: () => import('@/views/dashboard/HostingsView.vue'),
       },
     ],
   },
