@@ -44,9 +44,4 @@ const data: AuthData = reactive({
 
 <style lang="scss" module="$s">
 @import url('style.scss');
-
-.login-form :global(.auth-form__inputs input),
-.login-form :global(.auth-form__buttons button) {
-  width: 100%;
-}
 </style>

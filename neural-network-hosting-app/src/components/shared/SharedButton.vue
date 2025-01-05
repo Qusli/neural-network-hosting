@@ -52,6 +52,9 @@ const classes = reactive([
   -o-transition: $transition;
 
   span {
+    width: 100%;
+    text-align: center;
+
     transition: $transition;
     -webkit-transition: $transition;
     -o-transition: $transition;

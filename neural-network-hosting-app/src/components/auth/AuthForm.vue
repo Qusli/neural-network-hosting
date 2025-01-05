@@ -1,12 +1,12 @@
 <template>
   <form :class="$s['auth-form']">
-    <div v-if="$slots.header" :class="[$s['auth-form__header'], 'auth-form__header']">
+    <div v-if="$slots.header" :class="$s['auth-form__header']">
       <slot name="header"></slot>
     </div>
-    <fieldset v-if="$slots.inputs" :class="[$s['auth-form__inputs'], 'auth-form__inputs']">
+    <fieldset v-if="$slots.inputs" :class="$s['auth-form__inputs']">
       <slot name="inputs"></slot>
     </fieldset>
-    <div v-if="$slots.buttons" :class="[$s['auth-form__buttons'], 'auth-form__buttons']">
+    <div v-if="$slots.buttons" :class="$s['auth-form__buttons']">
       <slot name="buttons"></slot>
     </div>
   </form>
@@ -42,6 +42,11 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    input,
+    button {
+      width: 100%;
+    }
   }
 }
 </style>

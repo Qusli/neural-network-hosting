@@ -51,9 +51,4 @@ const data: RegistrationData = reactive({
 
 <style lang="scss" module="$s">
 @import url('style.scss');
-
-.registration-form :global(.auth-form__inputs input),
-.registration-form :global(.auth-form__buttons button) {
-  width: 100%;
-}
 </style>

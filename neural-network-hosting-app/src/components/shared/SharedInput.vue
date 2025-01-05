@@ -81,7 +81,7 @@ const onFocusOut = () => {
 
   position: relative;
 
-  padding: 15px 24px;
+  padding: 15px 20px;
 
   border: 1px solid $stroke-color;
   border-radius: $border-radius;
