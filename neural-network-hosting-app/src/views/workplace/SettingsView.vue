@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import SharedPageContainer from '@/components/shared/SharedPageContainer.vue'
+import SharedPageContainer from '@/components/shared/page-wrappers/SharedPageContainer.vue'
 </script>
 
 <template>
-  <SharedPageContainer title="Настройки рабочего пространства"> </SharedPageContainer>
+  <SharedPageContainer title="Настройки"> </SharedPageContainer>
 </template>
 
 <style lang="scss" module="$s"></style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SharedPageContainer from '@/components/shared/SharedPageContainer.vue'
+import SharedPageContainer from '@/components/shared/page-wrappers/SharedPageContainer.vue'
 </script>
 
 <template>

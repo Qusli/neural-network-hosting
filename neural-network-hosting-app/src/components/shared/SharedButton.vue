@@ -84,6 +84,10 @@ const classes = reactive([
   span {
     color: $text-default-color;
   }
+
+  :global(path) {
+      fill: $text-default-color;
+  }
 }
 
 .button--primary {
@@ -92,6 +96,10 @@ const classes = reactive([
   span {
     color: white;
   }
+
+  :global(path) {
+      fill: white;
+  }
 }
 
 .button--secondary {
@@ -99,6 +107,10 @@ const classes = reactive([
 
   span {
     color: $primary-color;
+  }
+
+  :global(path) {
+      fill: $primary-color;
   }
 }
 </style>

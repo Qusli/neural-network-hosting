@@ -12,17 +12,37 @@ defineProps<Props>()
 
 <template>
   <ul :class="$s.list">
-    <UserNavigationWorkplaceListItem v-for="item in items" :key="item.id" :item="item" />
+    <div :class="$s.container">
+      <UserNavigationWorkplaceListItem v-for="item in items" :key="item.id" :item="item" />
+    </div>
   </ul>
 </template>
 
 <style lang="scss" module="$s">
 .list {
-  max-height: 100%;
+  width: 100%;
+  height: 150%;
 
-  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  position: absolute;
+  bottom: 0;
+  left: calc(100% + 10px);
+
+  background-color: $component-background-color;
+  box-shadow: -2px 0px 8px rgba($box-shadow-color, 0.75);
+  border-radius: $border-radius;
+
+  z-index: 100;
 
   cursor: default;
+}
+
+.container {
+
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     width: 8px;

@@ -124,18 +124,6 @@ onClickOutside(navigation, (e: any) => {
 }
 
 .list {
-  width: 100%;
-  height: 100%;
-
-  position: absolute;
-  top: 0;
-  left: calc(100% + 10px);
-
-  background-color: $component-background-color;
-  box-shadow: -2px 0px 8px rgba($box-shadow-color, 0.75);
-  border-radius: $border-radius;
-
-  z-index: 100;
   opacity: 0;
 
   transition: opacity 0.35s ease;

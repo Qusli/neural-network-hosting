@@ -28,7 +28,7 @@ const mockUser: IUser = {
 }
 
 const mockWorkplace: IWorkplace = {
-  id: 0,
+  id: 2,
   title: 'Новое рабочее пространство',
   users: [mockUser],
 }
@@ -40,27 +40,12 @@ export const useAppStore = defineStore({
   state: (): State => ({
     workplaceses: {
       items: [
+        {
+          id: 1,
+          title: 'ООО "Взор"',
+          users: [mockUser],
+        },
         mockWorkplace,
-        {
-          id: 1,
-          title: 'VZOR',
-          users: [mockUser],
-        },
-        {
-          id: 1,
-          title: 'VZOR',
-          users: [mockUser],
-        },
-        {
-          id: 1,
-          title: 'VZOR',
-          users: [mockUser],
-        },
-        {
-          id: 1,
-          title: 'VZOR',
-          users: [mockUser],
-        },
       ],
       current: mockWorkplace,
     },
