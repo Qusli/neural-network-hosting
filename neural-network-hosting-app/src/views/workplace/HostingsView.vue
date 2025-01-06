@@ -14,5 +14,3 @@ import SharedPageSection from '@/components/shared/page-wrappers/SharedPageSecti
     </template>
   </SharedPageContainer>
 </template>
-
-<style lang="scss" module="$s"></style>

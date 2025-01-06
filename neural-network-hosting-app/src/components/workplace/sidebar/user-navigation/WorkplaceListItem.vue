@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { IWorkplace } from '@/interfaces/shared/workplace.interface'
+import type { IWorkplace } from '@/api/user-service-api/interfaces/workplace.interface'
 
 import { useAppStore } from '@/stores/app.store'
 
@@ -13,16 +13,19 @@ const appStore = useAppStore()
 </script>
 
 <template>
-  <li :class="[$s.item, item.id === appStore.workplaceses.current?.id ? $s['item--active'] : '']">
+  <li :class="[$s['workplace-list__item'], item.id === appStore.workplaces.current?.id ? $s['workplace-list__item--active'] : '']">
     {{ item.title }}
   </li>
 </template>
 
 <style lang="scss" module="$s">
-.item {
+.workplace-list__item {
   padding: 7px 10px;
 
-  transition: all 0.2s ease;
+  transition: all $transition-time $transition-function;
+  -webkit-transition: all $transition-time $transition-function;
+  -o-transition: all $transition-time $transition-function;
+
   cursor: pointer;
 
   &:first-child {

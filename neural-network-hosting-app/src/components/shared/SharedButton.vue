@@ -29,13 +29,13 @@ const classes = reactive([
 <template>
   <button :type="buttonType" :class="classes">
     <SharedInlineIcon v-if="plusIcon" name="plus" fill="white" />
-    <span>{{ label }}</span>
+    <span :class="$s['button__label']">{{ label }}</span>
   </button>
 </template>
 
 <style lang="scss" module="$s">
 .button {
-  $transition: all 0.35s ease;
+  $transition: all $transition-time $transition-function;
 
   max-height: 40px;
 
@@ -52,7 +52,7 @@ const classes = reactive([
   -webkit-transition: $transition;
   -o-transition: $transition;
 
-  span {
+  &__label {
     width: 100%;
     text-align: center;
 
@@ -67,7 +67,7 @@ const classes = reactive([
     background-color: $component-background-color;
     border-color: $primary-color;
 
-    span {
+    .button__label {
       color: $primary-color;
     }
 
@@ -81,36 +81,36 @@ const classes = reactive([
   background-color: $component-background-color;
   border-color: $stroke-color;
 
-  span {
+  .button__label {
     color: $text-default-color;
   }
 
   :global(path) {
-      fill: $text-default-color;
+    fill: $text-default-color;
   }
 }
 
 .button--primary {
   background-color: $primary-color;
 
-  span {
+  .button__label {
     color: white;
   }
 
   :global(path) {
-      fill: white;
+    fill: white;
   }
 }
 
 .button--secondary {
   background-color: $secondary-color;
 
-  span {
+  .button__label {
     color: $primary-color;
   }
 
   :global(path) {
-      fill: $primary-color;
+    fill: $primary-color;
   }
 }
 </style>

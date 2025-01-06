@@ -1,13 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div :class="$s.section">
+  <section :class="$s['page-section']">
     <slot></slot>
-  </div>
+  </section>
 </template>
 
 <style lang="scss" module="$s">
-.section {
+.page-section {
   padding: 10px 15px;
   border-radius: $border-radius;
   box-shadow: $box-shadow;

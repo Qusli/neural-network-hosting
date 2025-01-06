@@ -3,7 +3,6 @@ import { type ModelRef, type Ref, defineModel, ref, useId } from 'vue'
 
 interface Props {
   inputType?: 'text' | 'email' | 'password' | 'hidden'
-  // type?: ,
   placeholder?: string
 }
 
@@ -63,7 +62,7 @@ const onFocusOut = () => {
     border: $border-width solid transparent;
     border-radius: calc($border-radius + $border-width);
 
-    transition: border-color 0.35s ease;
+    transition: border-color $transition-time $transition-function;
     pointer-events: none;
   }
 
@@ -77,7 +76,7 @@ const onFocusOut = () => {
 }
 
 .input {
-  $transition: all 0.35s ease;
+  $transition: all $transition-time ease;
 
   position: relative;
 

@@ -7,17 +7,17 @@ import Sidebar from '@/modules/workplace/sidebar/Sidebar.vue'
   <!-- MOBILE HEADER -->
   <MobileHeader />
 
-  <main :class="$s.main">
+  <div :class="$s.wrapper">
     <!-- SIDEBAR -->
     <Sidebar />
 
     <!-- MAIN ACTIVITY -->
     <RouterView />
-  </main>
+  </div>
 </template>
 
 <style lang="scss" module="$s">
-.main {
+.wrapper {
   display: flex;
 }
 </style>

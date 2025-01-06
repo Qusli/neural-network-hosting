@@ -5,5 +5,3 @@ import SharedPageContainer from '@/components/shared/page-wrappers/SharedPageCon
 <template>
   <SharedPageContainer title="Настройки"> </SharedPageContainer>
 </template>
-
-<style lang="scss" module="$s"></style>

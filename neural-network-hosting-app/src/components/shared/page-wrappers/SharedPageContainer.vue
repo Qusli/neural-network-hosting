@@ -7,19 +7,19 @@ defineProps<Props>()
 </script>
 
 <template>
-  <section :class="$s.container">
-    <div :class="$s.container__header">
+  <main :class="$s['page-container']">
+    <div :class="$s['page-container__header']">
       <h1>{{ title }}</h1>
       <slot name="header-controls"></slot>
     </div>
-    <div :class="$s.container__body">
+    <div :class="$s['page-container__body']">
       <slot></slot>
     </div>
-  </section>
+  </main>
 </template>
 
 <style lang="scss" module="$s">
-.container {
+.page-container {
   width: 100%;
 
   display: flex;

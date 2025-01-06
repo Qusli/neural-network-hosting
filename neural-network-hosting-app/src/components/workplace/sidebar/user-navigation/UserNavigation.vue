@@ -4,7 +4,7 @@ import { type Ref, ref } from 'vue'
 import NotFoundUserIcon from '@/components/icons/NotFoundUserIcon.vue'
 
 import UserInfo from './UserInfo.vue'
-import UserNavigation from './UserNavigation.vue'
+import UserNavigationList from './UserNavigationList.vue'
 
 const user: Ref<HTMLElement | null> = ref(null)
 </script>
@@ -13,7 +13,7 @@ const user: Ref<HTMLElement | null> = ref(null)
   <div :class="[$s.user, 'sidebar-user-navigaton']" ref="user">
     <NotFoundUserIcon />
     <UserInfo />
-    <UserNavigation :user="user" />
+    <UserNavigationList :user-html-element="user" />
   </div>
 </template>
 

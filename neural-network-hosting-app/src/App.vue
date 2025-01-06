@@ -17,5 +17,3 @@ onMounted(() => {
 <template>
   <RouterView />
 </template>
-
-<style lang="scss" module="$s"></style>

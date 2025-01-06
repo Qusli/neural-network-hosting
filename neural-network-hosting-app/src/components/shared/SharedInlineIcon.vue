@@ -26,7 +26,7 @@ const icon = defineAsyncComponent(() => import(`@/assets/svg/${props.name}.svg`)
 }
 
 .icon path {
-  transition: all 0.35s ease;
+  transition: all $transition-time $transition-function;
 
   fill: v-bind(fill);
 }

@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import type { INavigationItem } from '@/interfaces/workplace/navigation-item.interface'
+import type { INavigationItem } from '@/interfaces/navigation-item.interface'
 
 import { Device } from '@/enums/device.enum'
 
 import { ROUTES } from '@/constants/routes.constant'
 
-import { useAppStore } from '@/stores/app.store'
+import { device } from '@/utils/device'
 
 import LogoMediumIcon from '@/components/icons/LogoMediumIcon.vue'
-import Navigation from '@/components/workplace/sidebar/navigation/Navigation.vue'
-import UserNavigation from '@/components/workplace/sidebar/user/User.vue'
+import NavigationList from '@/components/workplace/sidebar/navigation/NavigationList.vue'
+import UserNavigation from '@/components/workplace/sidebar/user-navigation/UserNavigation.vue'
 
 const navigations: INavigationItem[] = [
   {
@@ -23,14 +23,12 @@ const navigations: INavigationItem[] = [
     path: ROUTES.WORKPLACE.SETTINGS.PATH,
   },
 ]
-
-const appStore = useAppStore()
 </script>
 
 <template>
-  <aside v-if="appStore.device === Device.DESKTOP" :class="[$s.sidebar, $s['sidebar--open']]">
+  <aside v-if="device === Device.DESKTOP" :class="[$s.sidebar, $s['sidebar--open']]">
     <LogoMediumIcon :class="$s.sidebar__logotype" />
-    <Navigation :items="navigations" :class="$s.sidebar__navigation" />
+    <NavigationList :items="navigations" :class="$s['sidebar__navigation-list']" />
     <UserNavigation :class="$s.sidebar__user" />
   </aside>
 </template>
@@ -53,7 +51,6 @@ const appStore = useAppStore()
     min-width: $sidebar-open-width;
   }
 
-  &::before,
   &::after {
     content: '';
 
@@ -68,23 +65,17 @@ const appStore = useAppStore()
     text-align: center;
   }
 
-  // TODO: Нужна ли?
-  &::before {
-    display: none;
+  &__navigation-list {
+    flex: 1 1;
     order: 1;
   }
 
-  &__navigation {
-    flex: 1 1;
+  &::after {
     order: 2;
   }
 
-  &::after {
-    order: 3;
-  }
-
   &__user {
-    order: 4;
+    order: 3;
   }
 }
 </style>

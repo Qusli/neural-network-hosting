@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
 
-import type { INavigationItem } from '@/interfaces/workplace/navigation-item.interface'
+import type { INavigationItem } from '@/interfaces/navigation-item.interface'
 
 import SharedInlineIcon from '@/components/shared/SharedInlineIcon.vue'
 
@@ -13,14 +13,14 @@ defineProps<Props>()
 </script>
 
 <template>
-  <RouterLink :to="item.path" :class="$s.link">
+  <RouterLink :to="item.path" :class="$s['navigation-list__item']">
     <SharedInlineIcon :name="item.icon" />
-    <p>{{ item.label }}</p>
+    <p :class="$s['item__label']">{{ item.label }}</p>
   </RouterLink>
 </template>
 
 <style lang="scss" module="$s">
-.link {
+.navigation-list__item {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -29,25 +29,25 @@ defineProps<Props>()
   border-radius: $border-radius;
 }
 
-.link,
-p {
-  transition: all 0.35s ease;
+.navigation-list__item,
+.item__label {
+  transition: all $transition-time $transition-function;
 }
 
-.link:global(.router-link-active),
-.link:not(.link:global(.router-link-active)):hover {
+.navigation-list__item:global(.router-link-active),
+.navigation-list__item:not(:global(.router-link-active)):hover {
   background-color: $secondary-color;
 
-  p {
+  .item__label {
     color: $primary-color;
   }
 
-  & :global(path) {
+  :global(path) {
     fill: $primary-color;
   }
 }
 
-.link:global(.router-link-active) {
+.navigation-list__item:global(.router-link-active) {
   cursor: default;
 }
 </style>

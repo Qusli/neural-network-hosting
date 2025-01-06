@@ -6,15 +6,13 @@ const appStore = useAppStore()
 
 <template>
   <div :class="$s['user-info']">
-    <p :class="$s['user-info__name']">{{ appStore.userEmail }}</p>
+    <p :class="$s['user-info__name']">{{ appStore.userEmailLabel }}</p>
     <p :class="$s['user-info__email']">{{ appStore.userRoleLabel }}</p>
   </div>
 </template>
 
 <style lang="scss" module="$s">
 .user-info {
-  height: 100%;
-
   flex: 1 1;
 
   overflow: hidden;

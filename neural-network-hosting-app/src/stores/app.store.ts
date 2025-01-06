@@ -1,15 +1,12 @@
 import { defineStore } from 'pinia'
 
-import type { IUser } from '@/interfaces/shared/user.interface'
-import type { IWorkplace } from '@/interfaces/shared/workplace.interface'
+import type { IWorkplace } from '@/api/user-service-api/interfaces/workplace.interface'
+import type { IUser } from '@/api/workplace-service-api/interfaces/user.interface'
 
-import { Device } from '@/enums/device.enum'
 import { Role } from '@/enums/role.enum'
 
-import { windowInnerWidth } from '@/utils/on-resize'
-
 interface State {
-  workplaceses: {
+  workplaces: {
     items: IWorkplace[]
     current: IWorkplace | null
   }
@@ -38,7 +35,7 @@ const mockWorkplace: IWorkplace = {
 export const useAppStore = defineStore({
   id: 'app-store',
   state: (): State => ({
-    workplaceses: {
+    workplaces: {
       items: [
         {
           id: 1,
@@ -49,21 +46,10 @@ export const useAppStore = defineStore({
       ],
       current: mockWorkplace,
     },
-    user: mockUser,
+    user: null,
   }),
   getters: {
-    userTitle: (state: State): string => {
-      if (!state.user?.lastname && !state.user?.firstname) {
-        return 'Аноним'
-      }
-
-      if (!state.user?.lastname && state.user?.firstname) {
-        return state.user?.firstname
-      }
-
-      return `${state.user?.lastname} ${state.user?.firstname}`
-    },
-    userEmail: (state: State): string => {
+    userEmailLabel: (state: State): string => {
       return state.user?.email ?? 'Неизвестная почта'
     },
     userRoleLabel: (state: State): string => {
@@ -71,21 +57,20 @@ export const useAppStore = defineStore({
         return 'Администратор'
       }
 
-      return 'Пользователь'
-    },
-    device: (): Device => {
-      if (windowInnerWidth.value <= 560) {
-        return Device.PHONE
+      if (state.user?.role === Role.USER) {
+        return 'Пользователь'
       }
 
-      if (windowInnerWidth.value <= 768) {
-        return Device.TABLET
-      }
-
-      return Device.DESKTOP
+      return 'Неизвестная роль'
     },
   },
   actions: {
-    init() {},
+    init() {
+      this.setUser(mockUser)
+    },
+
+    setUser(user: IUser) {
+      this.user = user
+    },
   },
 })

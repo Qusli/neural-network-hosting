@@ -1,13 +1,9 @@
 <script setup lang="ts">
 import { Device } from '@/enums/device.enum'
 
-import { useAppStore } from '@/stores/app.store'
-
-const appStore = useAppStore()
+import { device } from '@/utils/device'
 </script>
 
 <template>
-  <header v-if="appStore.device === Device.TABLET || appStore.device === Device.PHONE"></header>
+  <header v-if="device === Device.TABLET || device === Device.PHONE"></header>
 </template>
-
-<style lang="scss" module="$s"></style>

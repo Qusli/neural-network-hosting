@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { IWorkplace } from '@/interfaces/shared/workplace.interface'
+import type { IWorkplace } from '@/api/user-service-api/interfaces/workplace.interface'
 
-import UserNavigationWorkplaceListItem from './UserNavigationWorkplaceListItem.vue'
+import WorkplaceListItem from './WorkplaceListItem.vue'
 
 interface Props {
   items: IWorkplace[]
@@ -11,25 +11,20 @@ defineProps<Props>()
 </script>
 
 <template>
-  <ul :class="$s.list">
-    <div :class="$s.container">
-      <UserNavigationWorkplaceListItem v-for="item in items" :key="item.id" :item="item" />
+  <ul :class="$s['workplace-list']">
+    <div :class="$s['workplace-list__body']">
+      <WorkplaceListItem v-for="item in items" :key="item.id" :item="item" />
     </div>
   </ul>
 </template>
 
 <style lang="scss" module="$s">
-.list {
+.workplace-list {
   width: 100%;
-  height: 150%;
 
   display: flex;
   flex-direction: column;
   gap: 5px;
-
-  position: absolute;
-  bottom: 0;
-  left: calc(100% + 10px);
 
   background-color: $component-background-color;
   box-shadow: -2px 0px 8px rgba($box-shadow-color, 0.75);
@@ -40,8 +35,7 @@ defineProps<Props>()
   cursor: default;
 }
 
-.container {
-
+.workplace-list__body {
   overflow-y: auto;
 
   &::-webkit-scrollbar {
@@ -54,7 +48,7 @@ defineProps<Props>()
 
   &::-webkit-scrollbar-thumb {
     background-color: rgba($stroke-color, 0.5);
-    border-radius: 5px;
+    border-radius: $border-radius;
   }
 }
 </style>
