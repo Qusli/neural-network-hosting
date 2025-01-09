@@ -1,15 +1,10 @@
 import { defineStore } from 'pinia'
 
-import type { IWorkplace } from '@/api/user-service-api/interfaces/workplace.interface'
 import type { IUser } from '@/api/workplace-service-api/interfaces/user.interface'
 
 import { Role } from '@/enums/role.enum'
 
 interface State {
-  workplaces: {
-    items: IWorkplace[]
-    current: IWorkplace | null
-  }
   user: IUser | null
 }
 
@@ -24,28 +19,11 @@ const mockUser: IUser = {
   role: Role.ADMINISTRATIOR,
 }
 
-const mockWorkplace: IWorkplace = {
-  id: 2,
-  title: 'Новое рабочее пространство',
-  users: [mockUser],
-}
-
 // END MOCK DATA
 
 export const useAppStore = defineStore({
   id: 'app-store',
   state: (): State => ({
-    workplaces: {
-      items: [
-        {
-          id: 1,
-          title: 'ООО "Взор"',
-          users: [mockUser],
-        },
-        mockWorkplace,
-      ],
-      current: mockWorkplace,
-    },
     user: null,
   }),
   getters: {

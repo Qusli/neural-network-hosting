@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { IWorkplace } from '@/api/user-service-api/interfaces/workplace.interface'
 
-import { useAppStore } from '@/stores/app.store'
+import { useWorkplacesStore } from '@/stores/workplaces.store';
 
 interface Props {
   item: IWorkplace
@@ -9,11 +9,17 @@ interface Props {
 
 defineProps<Props>()
 
-const appStore = useAppStore()
+const workplacesStore = useWorkplacesStore()
 </script>
 
 <template>
-  <li :class="[$s['workplace-list__item'], item.id === appStore.workplaces.current?.id ? $s['workplace-list__item--active'] : '']">
+  <li
+    :class="[
+      $s['workplace-list__item'],
+      item.id === workplacesStore.workplaces.current?.id ? $s['workplace-list__item--active'] : '',
+    ]"
+    @click="workplacesStore.switchWorkplace(item)"
+  >
     {{ item.title }}
   </li>
 </template>
@@ -52,7 +58,7 @@ const appStore = useAppStore()
     background-color: $secondary-color;
   }
 
-  &:not(.item--active):active {
+  &:not(.workplace-list__item--active):active {
     background-color: rgba($primary-color, 0.4);
   }
 }

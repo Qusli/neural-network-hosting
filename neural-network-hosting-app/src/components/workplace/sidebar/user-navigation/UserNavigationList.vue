@@ -5,10 +5,12 @@ import { useRouter } from 'vue-router'
 
 import { ROUTES } from '@/constants/routes.constant'
 
-import { useAppStore } from '@/stores/app.store'
 
 import WorkplaceList from './WorkplaceList.vue'
 import WorkplaceListLabel from './WorkplaceListLabel.vue'
+import { useWorkplacesStore } from '@/stores/workplaces.store'
+import { useAppStore } from '@/stores/app.store'
+import { useHostingsStore } from '@/stores/hostings.store'
 
 interface Props {
   userHtmlElement: HTMLElement | null
@@ -19,6 +21,8 @@ const props = defineProps<Props>()
 const router = useRouter()
 
 const appStore = useAppStore()
+const hostingsStore = useHostingsStore()
+const workplacesStore = useWorkplacesStore()
 
 const navigationListHasOpen: Ref<boolean> = ref(false)
 const workplaceListHasOpen: Ref<boolean> = ref(false)
@@ -27,6 +31,8 @@ const navigation: Ref<HTMLElement | null> = ref(null)
 
 function logout() {
   appStore.$reset()
+  hostingsStore.$reset()
+  workplacesStore.$reset()
 
   router.push(ROUTES.AUTH.LOGIN.PATH)
 }
@@ -43,20 +49,29 @@ onClickOutside(navigation, (e: any) => {
 
 <template>
   <div
-    :class="[$s['user__navigation-list'], navigationListHasOpen ? $s['user__navigation-list--open'] : '']"
+    :class="[
+      $s['user__navigation-list'],
+      navigationListHasOpen ? $s['user__navigation-list--open'] : '',
+    ]"
     ref="navigation"
   >
-    <RouterLink :to="ROUTES.USER.PROFILE.PATH" :class="$s['navigation-list__item']">Профиль</RouterLink>
-    <RouterLink :to="ROUTES.USER.SETTINGS.PATH" :class="$s['navigation-list__item']">Настройки</RouterLink>
+    <RouterLink :to="ROUTES.USER.PROFILE.PATH" :class="$s['navigation-list__item']"
+      >Профиль</RouterLink
+    >
+    <RouterLink :to="ROUTES.USER.SETTINGS.PATH" :class="$s['navigation-list__item']"
+      >Настройки</RouterLink
+    >
     <WorkplaceListLabel
       :is-active="workplaceListHasOpen"
       @click="workplaceListHasOpen = !workplaceListHasOpen"
     />
-    <p :class="[$s['navigation-list__item'], $s['navigation-list__logout']]" @click="logout">Выйти</p>
+    <p :class="[$s['navigation-list__item'], $s['navigation-list__logout']]" @click="logout">
+      Выйти
+    </p>
 
     <!-- WORKPLACE LIST -->
     <WorkplaceList
-      :items="appStore.workplaces.items"
+      :items="workplacesStore.workplaces.items"
       :class="[$s['workplace-list'], workplaceListHasOpen ? $s['workplace-list--open'] : '']"
     />
   </div>

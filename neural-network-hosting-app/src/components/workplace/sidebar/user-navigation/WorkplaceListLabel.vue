@@ -13,11 +13,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <div :class="[$s['workplace-list__label'], isActive ? $s['workplace-list__label-active'] : '']">
     <p>Рабочие пространства</p>
-    <SharedInlineIcon
-      name="arrow-forward"
-      size="1rem"
-      :class="$s['label__arrow-forward-icon']"
-    />
+    <SharedInlineIcon name="arrow-forward" size="1rem" :class="$s['label__arrow-forward-icon']" />
   </div>
 </template>
 

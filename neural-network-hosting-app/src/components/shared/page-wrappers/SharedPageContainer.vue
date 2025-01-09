@@ -28,6 +28,9 @@ defineProps<Props>()
 
   padding: 20px;
 
+  margin-left: auto;
+  margin-right: auto;
+
   &__header {
     display: flex;
     align-items: center;
