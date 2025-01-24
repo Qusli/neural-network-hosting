@@ -3,9 +3,12 @@ import { defineStore } from 'pinia'
 import type { IUser } from '@/api/workplace-service-api/interfaces/user.interface'
 
 import { Role } from '@/enums/role.enum'
+import { ROUTES } from '@/constants/routes.constant'
 
 interface State {
   user: IUser | null
+  token: string | null
+  isLogin: boolean
 }
 
 // MOCK DATA
@@ -25,6 +28,8 @@ export const useAppStore = defineStore({
   id: 'app-store',
   state: (): State => ({
     user: null,
+    token: null,
+    isLogin: false
   }),
   getters: {
     userEmailLabel: (state: State): string => {
@@ -44,10 +49,38 @@ export const useAppStore = defineStore({
   },
   actions: {
     init() {
+      const token = this.getToken()
+
+      console.log(token)
+
+      if (!token) {
+        this.router.push(ROUTES.AUTH.LOGIN.PATH)
+      }
+
       this.setUser(mockUser)
+
+      this.isLogin = true
     },
 
-    setUser(user: IUser) {
+    getToken(): string | null {
+      const token: string | null = localStorage.getItem("token")
+
+      if (!token) {
+        return null
+      }
+
+      this.token = token;
+
+      return token;
+    },
+
+    setToken(token: string): void {
+      localStorage.setItem("token", token)
+      
+      this.token = token
+    },
+
+    setUser(user: IUser): void {
       this.user = user
     },
   },

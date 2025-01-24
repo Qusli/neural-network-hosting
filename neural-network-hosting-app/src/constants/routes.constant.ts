@@ -14,6 +14,10 @@ export const ROUTES = {
       PATH: '/workplace/hostings',
       NAME: 'workplace/hostings',
     },
+    HOSTING: {
+      PATH: '/workplace/hostings/:id',
+      NAME: 'workplace/hostings/:id',
+    },
     SETTINGS: {
       PATH: '/workplace/settings',
       NAME: 'workplace/settings',

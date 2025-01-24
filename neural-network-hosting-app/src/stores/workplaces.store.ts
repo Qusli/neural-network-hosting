@@ -1,53 +1,55 @@
-import type { IWorkplace } from "@/api/user-service-api/interfaces/workplace.interface";
-import type { IUser } from "@/api/workplace-service-api/interfaces/user.interface";
-import { Role } from "@/enums/role.enum";
-import { defineStore } from "pinia";
+import { defineStore } from 'pinia'
+
+import type { IWorkplace } from '@/api/user-service-api/interfaces/workplace.interface'
+import type { IUser } from '@/api/workplace-service-api/interfaces/user.interface'
+
+import { Role } from '@/enums/role.enum'
 
 interface State {
-    workplaces: {
-        items: IWorkplace[]
-        current: IWorkplace | null
-    }
+  workplaces: {
+    items: IWorkplace[]
+    current: IWorkplace | null
+  }
 }
 
 // MOCK DATA
 
 const mockUser: IUser = {
-    id: 0,
-    lastname: 'Шустович',
-    firstname: 'Димитрий',
-    patronic: 'Сергеевич',
-    email: 'daxmxx4@gmail.com',
-    role: Role.ADMINISTRATIOR,
-  }
-  
-const mockWorkplace: IWorkplace = {
-    id: 2,
-    title: 'Новое рабочее пространство',
-    users: [mockUser],
+  id: 0,
+  lastname: 'Шустович',
+  firstname: 'Димитрий',
+  patronic: 'Сергеевич',
+  email: 'daxmxx4@gmail.com',
+  role: Role.ADMINISTRATIOR,
 }
-  
+
+const mockWorkplace: IWorkplace = {
+  id: 2,
+  title: 'Новое рабочее пространство',
+  users: [mockUser],
+}
+
 // END MOCK DATA
 
 export const useWorkplacesStore = defineStore({
-    id: "workplace-store",
-    state: (): State => ({
-        workplaces: {
-            items: [
-                {
-                id: 1,
-                title: 'ООО "Взор"',
-                users: [mockUser],
-                },
-                mockWorkplace,
-            ],
-            current: mockWorkplace,
+  id: 'workplace-store',
+  state: (): State => ({
+    workplaces: {
+      items: [
+        {
+          id: 1,
+          title: 'ООО "Взор"',
+          users: [mockUser],
         },
-    }),
-    getters: {},
-    actions: {
-        switchWorkplace(workplace: IWorkplace) {
-            this.workplaces.current = workplace
-        }
-    }
+        mockWorkplace,
+      ],
+      current: mockWorkplace,
+    },
+  }),
+  getters: {},
+  actions: {
+    switchWorkplace(workplace: IWorkplace) {
+      this.workplaces.current = workplace
+    },
+  },
 })

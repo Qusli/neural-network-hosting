@@ -1,3 +1,11 @@
+html {
+  font-family: 'Roboto', serif;
+  font-weight: 400;
+  font-size: 1rem;
+
+  color: $text-default-color;
+}
+
 body {
   background-color: $background-color;
 }
@@ -14,26 +22,12 @@ h3 {
   font-size: 28px;
 }
 
-span,
-p,
 input,
-button,
-a,
-li {
-  font-size: 1rem;
-}
-
-h1,
-h2,
-h3,
-span,
-p,
-input,
-button,
-a,
-li {
+button {
   font-family: 'Roboto', serif;
   font-weight: 400;
+  font-size: 1rem;
+
   color: $text-default-color;
 }
 

@@ -23,6 +23,10 @@ input {
   }
 }
 
+input[type='checkbox'] {
+  margin: 0;
+}
+
 h1,
 h2,
 h3,
@@ -42,4 +46,5 @@ li {
 
 a {
   text-decoration: none;
+  color: $text-default-color;
 }

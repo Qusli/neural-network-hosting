@@ -1,4 +1,4 @@
 export const enum HostingStatus {
-    ACTIVE = "active",
-    DEACTIVE = "deactive"
+  ACTIVE = 'active',
+  DEACTIVE = 'deactive',
 }

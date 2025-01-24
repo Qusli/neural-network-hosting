@@ -5,12 +5,12 @@ import { useRouter } from 'vue-router'
 
 import { ROUTES } from '@/constants/routes.constant'
 
+import { useAppStore } from '@/stores/app.store'
+import { useHostingsStore } from '@/stores/hostings.store'
+import { useWorkplacesStore } from '@/stores/workplaces.store'
 
 import WorkplaceList from './WorkplaceList.vue'
 import WorkplaceListLabel from './WorkplaceListLabel.vue'
-import { useWorkplacesStore } from '@/stores/workplaces.store'
-import { useAppStore } from '@/stores/app.store'
-import { useHostingsStore } from '@/stores/hostings.store'
 
 interface Props {
   userHtmlElement: HTMLElement | null

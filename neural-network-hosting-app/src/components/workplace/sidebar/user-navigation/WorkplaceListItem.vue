@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { IWorkplace } from '@/api/user-service-api/interfaces/workplace.interface'
 
-import { useWorkplacesStore } from '@/stores/workplaces.store';
+import { useWorkplacesStore } from '@/stores/workplaces.store'
 
 interface Props {
   item: IWorkplace

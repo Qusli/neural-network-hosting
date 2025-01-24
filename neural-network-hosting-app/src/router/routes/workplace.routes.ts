@@ -13,6 +13,11 @@ export default [
         component: () => import('@/views/workplace/HostingsView.vue'),
       },
       {
+        path: ROUTES.WORKPLACE.HOSTING.PATH,
+        name: ROUTES.WORKPLACE.HOSTING.NAME,
+        component: () => import('@/views/workplace/HostingView.vue'),
+      },
+      {
         path: ROUTES.WORKPLACE.SETTINGS.PATH,
         name: ROUTES.WORKPLACE.SETTINGS.NAME,
         component: () => import('@/views/workplace/SettingsView.vue'),

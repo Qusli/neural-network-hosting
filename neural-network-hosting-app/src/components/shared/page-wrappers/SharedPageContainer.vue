@@ -39,6 +39,8 @@ defineProps<Props>()
 
   &__body {
     width: 100%;
+
+    flex: 1 1;
   }
 }
 </style>

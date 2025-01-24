@@ -1,4 +1,4 @@
-import type { HostingStatus } from "../enums/hosting-status.enum"
+import type { HostingStatus } from '../enums/hosting-status.enum'
 
 export interface IHosting {
   id: number

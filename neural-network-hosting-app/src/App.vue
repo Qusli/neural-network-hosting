@@ -10,6 +10,12 @@ onMounted(() => {
   // on resize event
   onReisze()
 
+  const token = appStore.getToken()
+
+  if (!token) {
+    appStore.setToken("test")
+  }
+
   appStore.init()
 })
 </script>
